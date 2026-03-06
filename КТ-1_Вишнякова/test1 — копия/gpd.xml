@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-diagram name="test1" notation="bpmn" rendered="graphiti" showActions="false" showGrid="false" width="821" height="610">
+  <node name="ID1" x="80" y="200" width="48" height="48">
+    <transition name="Переход1"/>
+    <textDecoration x="86" y="172"/>
+  </node>
+  <node name="ID2" x="470" y="200" width="48" height="48">
+    <textDecoration x="439" y="248"/>
+  </node>
+  <node name="ID5" x="200" y="164" width="180" height="120">
+    <transition name="Переход1"/>
+  </node>
+</process-diagram>

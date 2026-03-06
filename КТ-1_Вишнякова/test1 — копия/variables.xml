@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<variables>
+  <variable name="Роль1" scriptingName="Роль1" format="ru.runa.wfe.var.format.ExecutorFormat" swimlane="true"/>
+  <variable name="Роль2" scriptingName="Роль2" format="ru.runa.wfe.var.format.ExecutorFormat" swimlane="true" editor="SwimlaneElement.ManualLabel"/>
+</variables>

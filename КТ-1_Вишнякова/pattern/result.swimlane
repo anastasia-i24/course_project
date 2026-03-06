@@ -1,0 +1,19 @@
+[1]
+name = 1
+delegation = ru.runa.wfe.extension.orgfunction.ExecutorByNameFunction
+
+[2]
+name = 1
+delegation = ru.runa.wfe.extension.orgfunction.ExecutorByNameFunction
+
+[3]
+name = 2
+delegation = ru.runa.wfe.extension.orgfunction.ExecutorByNameFunction
+
+[4]
+name = 1
+delegation = ru.runa.wfe.extension.orgfunction.ExecutorByNameFunction
+
+[5]
+name = 2
+delegation = ru.runa.wfe.extension.orgfunction.ExecutorByNameFunction
