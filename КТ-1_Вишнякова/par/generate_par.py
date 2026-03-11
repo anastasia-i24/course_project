@@ -1,16 +1,16 @@
 import zipfile
 import os
 import shutil
-import variables_definition_parser
-import process_definition_parser
+import variables_definition
+import process_definition
 
 def generate_par(lanes):
     if os.path.exists('temporary'):
         shutil.rmtree('temporary')
     shutil.copytree('templates', 'temporary')
     try:
-        variables_definition_parser('temporary/variables.xml', lanes)
-        process_definition_parser('temporary/processdefinition.xml', lanes)
+        variables_definition('temporary/variables.xml', lanes)
+        process_definition('temporary/processdefinition.xml', lanes)
         with zipfile.ZipFile('result.par', 'w', zipfile.ZIP_DEFLATED) as zf:
             for root, dirs, files in os.walk('temporary'):
                 for file in files:
