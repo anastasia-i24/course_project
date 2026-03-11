@@ -1,8 +1,8 @@
 import xml.dom.minidom as md
 
-def variables_definition_parser(path, lanes):
+def variables_definition(path, lanes):
     file = md.parse(path)
-    for name, group in lanes:
+    for name in lanes:
         variable = file.createElement('variable')
 
         variable.setAttribute('name', name)
@@ -10,7 +10,7 @@ def variables_definition_parser(path, lanes):
         variable.setAttribute('format', "ru.runa.wfe.var.format.ExecutorFormat" )
         variable.setAttribute('swimlane', 'true')
         
-        if group:
+        if lanes[name] != '':
             variable.setAttribute('editor', 'SwimlaneElement.ManualLabel')
 
         file.firstChild.appendChild(variable)

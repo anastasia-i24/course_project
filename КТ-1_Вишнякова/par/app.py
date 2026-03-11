@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 import os
-import generate_par
+from generate_par import generate_par
 
 class App:
     def __init__(self, root):
@@ -46,12 +46,14 @@ class App:
     
 
     def generate(self):
-        lanes = []
+        lanes = {}
         for e1, e2 in self.entries:
             name = e1.get().strip()
             group = e2.get().strip()
             if name and group:
-                lanes.append({'name': name, 'group': group})
+                lanes[name] = group
+            elif name and not group:
+                lanes[name] = ''
         if not lanes:
             messagebox.showwarning("Внимание", "Не введены данные")
             return

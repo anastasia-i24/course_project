@@ -1,6 +1,6 @@
 import xml.dom.minidom as md
 
-def variables_definition_parser(path, lanes):
+def process_definition(path, lanes):
     file = md.parse(path)
     laneSet = file.getElementsByTagName('laneSet')[0]
     for i, name in enumerate(lanes, start=3):
@@ -17,7 +17,7 @@ def variables_definition_parser(path, lanes):
 
       prop_config = file.createElement('runa:property')
       prop_config.setAttribute('name', 'config')
-      if lanes.get(name):
+      if lanes[name] != '':
         config_value = f'ru.runa.wfe.extension.orgfunction.ExecutorByNameFunction({lanes[name]})'
       else:
          config_value = ''

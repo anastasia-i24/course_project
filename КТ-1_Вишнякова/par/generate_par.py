@@ -1,13 +1,13 @@
 import zipfile
 import os
 import shutil
-import variables_definition
-import process_definition
+from variables_definition import variables_definition
+from process_definition import process_definition
 
 def generate_par(lanes):
     if os.path.exists('temporary'):
         shutil.rmtree('temporary')
-    shutil.copytree('templates', 'temporary')
+    shutil.copytree('par/templates', 'temporary')
     try:
         variables_definition('temporary/variables.xml', lanes)
         process_definition('temporary/processdefinition.xml', lanes)
