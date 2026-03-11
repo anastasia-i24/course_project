@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-diagram name="pattern" notation="bpmn" rendered="graphiti" showActions="false" showGrid="false" width="1274" height="653">
+  <node name="ID1" x="140" y="260" width="48" height="48">
+    <textDecoration x="140" y="228" width="49" height="32"/>
+  </node>
+  <node name="ID2" x="730" y="260" width="48" height="48">
+    <textDecoration x="687" y="308" width="134" height="21"/>
+  </node>
+</process-diagram>
