@@ -1,19 +1,35 @@
 import xml.dom.minidom as md
 
-def variables_definition(path, lanes):
+def variables_definition(path, variables):
     file = md.parse(path)
-    for name in lanes:
+    for name, items in variables.items():
         variable = file.createElement('variable')
 
         variable.setAttribute('name', name)
         variable.setAttribute('scriptingName', name)
-        variable.setAttribute('format', "ru.runa.wfe.var.format.ExecutorFormat" )
-        variable.setAttribute('swimlane', 'true')
-        
-        if lanes[name] != '':
-            variable.setAttribute('editor', 'SwimlaneElement.ManualLabel')
+        variable.setAttribute('format', f'ru.runa.wfe.var.format.{items['format']}Format' )
+
+        if items['format'] == 'Executor':
+            variable.setAttribute('swimlane', 'true')
+            if variables[name]['editor'] != '':
+                variable.setAttribute('editor', items['editor'])
+    
 
         file.firstChild.appendChild(variable)
 
         with open(path, 'w', encoding='utf-8') as f:
             file.writexml(f, indent='', addindent='  ', newl='\n', encoding='utf-8')
+
+'''
+how variables dict should look
+variables = {
+    name1: {
+        format: 'some format', 
+        editor: 'some editor'
+        },
+    name2: {
+    ...
+        },
+    ...
+}
+'''
